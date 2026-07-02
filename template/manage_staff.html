@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    welcome to admin you can manage staffs here
+    <h2>Manage Staff</h2>
+    <a href="{% url 'add_staff' %}">+ADD staff</a>
+    <table border="">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        {% for i in staff_list %}
+        {% csrf_token %}
+        <tr>
+            <td>{{i.username}}</td>
+            <td>
+                <a href="{% url 'edit_staff' i.id %}">Edit</a>
+                <a href="{% url 'delete_staff' i.id %}" onclick="return confirm("are you sure want to delete")>Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'admin_dahsboard' %}">Back to admin </a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+
+            <label for="">user Name</label>
+            <input type="text" name="username" id="">
+        </div>
+        <div>
+
+            <label for="">password</label>
+            <input type="password" name="password" id="">
+        </div>
+        <div>
+            <Label>Role</Label>
+            
+            <select name="role" id="">
+                <option value="">-- Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="staff">Staff</option>
+            </select>
+        </div>
+        <div>
+
+            <p>Admin can manage staff amd approve leave request</p>
+        </div>
+            <button type="submit">Register</button>
+
+    </form>
+    <p>If already register just go <a href="{% url 'login' %}">clck here</a> to sighn in</p>
+    <p><a href="{% url 'home' %}"></a>Back to home</p>
+</body>
+</html>

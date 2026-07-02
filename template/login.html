@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+      <h1>SLMS Login Page</h1>
+      <p>Staf............</p>
+      <form method="POST">
+        {% csrf_token %}
+        <label for="">User Name</label>
+        <input type="text" name="username" id="" />
+        <label for="">password</label>
+        <input type="password" name="password" id="" />
+        <button type="submit">Submit</button>
+      </form>
+      <p>Don't Have an account <a href="{% url 'register' %}">Register</a></p>
+      <p><a href="{% url 'home' %}">Back to Home</a></p>
+  </body>
+</html>
